@@ -1,0 +1,90 @@
+#Inserções na Tabela PASSAGEIROS
+INSERT INTO PASSAGEIROS (PASS_CPF, PASS_NOME, PASS_TELEFONE, PASS_EMAIL, PASS_RUA, PASS_NUMRUA, PASS_BAIRRO, PASS_CIDADE, PASS_ESTADO, PASS_PAIS, PASS_CODPOSTAL)
+VALUES ('123.456.789-00', 'Carlos Silva', '(11) 98765-4321', 'carlos.silva@email.com', 'Rua A', 100, 'Centro', 'São Paulo', 'SP', 'Brasil', '01000-000');
+INSERT INTO PASSAGEIROS VALUES ('234.567.890-11', 'Ana Souza', '(21) 92345-6789', 'ana.souza@email.com', 'Rua B', 200, 'Botafogo', 'Rio de Janeiro', 'RJ', 'Brasil', '22222-000');
+INSERT INTO PASSAGEIROS VALUES ('345.678.901-22', 'Marcos Costa', '(31) 99876-5432', 'marcos.costa@email.com', 'Avenida C', 300, 'Savassi', 'Belo Horizonte', 'MG', 'Brasil', '30120-000');
+INSERT INTO PASSAGEIROS VALUES ('456.789.012-33', 'Paula Lima', '(41) 91234-5678', 'paula.lima@email.com', 'Rua D', 400, 'Centro Cívico', 'Curitiba', 'PR', 'Brasil', '80030-000');
+INSERT INTO PASSAGEIROS VALUES ('567.890.123-44', 'João Pereira', '(51) 95678-1234', 'joao.pereira@email.com', 'Rua E', 500, 'Moinhos', 'Porto Alegre', 'RS', 'Brasil', '90040-000');
+
+#Atualizações na Tabela PASSAGEIROS
+UPDATE PASSAGEIROS SET PASS_TELEFONE = '(11) 91234-5678' WHERE PASS_CPF = '123.456.789-00';
+UPDATE PASSAGEIROS SET PASS_CIDADE = 'Niterói' WHERE PASS_NOME = 'Ana Souza';
+
+#Exclusão na Tabela PASSAGEIROS
+DELETE FROM PASSAGEIROS WHERE PASS_CPF = '567.890.123-44';
+
+
+#Inserções na Tabela AEROPORTOS
+INSERT INTO AEROPORTOS (AEROP_CODIGO, AEROP_NOME, AEROP_CIDADE, AEROP_PAIS, AEROP_LATITUDE, AEROP_LONGITUDE)
+VALUES (1, 'Aeroporto de Guarulhos', 'São Paulo', 'Brasil', -23.43, -46.47);
+INSERT INTO AEROPORTOS VALUES (2, 'Aeroporto Galeão', 'Rio de Janeiro', 'Brasil', -22.81, -43.25);
+INSERT INTO AEROPORTOS VALUES (3, 'Aeroporto de Confins', 'Belo Horizonte', 'Brasil', -19.63, -43.97);
+INSERT INTO AEROPORTOS VALUES (4, 'Aeroporto Salgado Filho', 'Porto Alegre', 'Brasil', -30.00, -51.18);
+INSERT INTO AEROPORTOS VALUES (5, 'Aeroporto de Brasília', 'Brasília', 'Brasil', -15.87, -47.92);
+
+#Atualizações na Tabela AEROPORTOS
+UPDATE AEROPORTOS SET AEROP_NOME = 'Aeroporto Internacional de Guarulhos' WHERE AEROP_CODIGO = 1;
+UPDATE AEROPORTOS SET AEROP_PAIS = 'Argentina' WHERE AEROP_CIDADE = 'Porto Alegre';
+
+#Exclusão na Tabela AEROPORTOS
+DELETE FROM AEROPORTOS WHERE AEROP_CODIGO = 5;
+
+
+#Inserções na Tabela FUNCIONARIOS
+INSERT INTO FUNCIONARIOS (FUNC_ID, FUNC_NOME, FUNC_DATANASC, FUNC_CPF, FUNC_FUNCAO, FUNC_RUA, FUNC_NUMRUA, FUNC_BAIRRO, FUNC_CIDADE, FUNC_ESTADO, FUNC_PAIS, FUNC_CODPOSTAL)
+VALUES (1, 'Luciana Costa', '1985-03-15', '111.222.333-44', 'Piloto', 'Avenida F', 600, 'Centro', 'São Paulo', 'SP', 'Brasil', '01000-000');
+INSERT INTO FUNCIONARIOS VALUES (2, 'Fernando Souza', '1990-05-20', '222.333.444-55', 'Comissário', 'Rua G', 700, 'Barra', 'Rio de Janeiro', 'RJ', 'Brasil', '22000-000');
+INSERT INTO FUNCIONARIOS VALUES (3, 'Amanda Silva', '1992-07-10', '333.444.555-66', 'Atendente', 'Rua H', 800, 'Savassi', 'Belo Horizonte', 'MG', 'Brasil', '30130-000');
+INSERT INTO FUNCIONARIOS VALUES (4, 'Pedro Mendes', '1988-12-22', '444.555.666-77', 'Engenheiro', 'Rua I', 900, 'Cristal', 'Porto Alegre', 'RS', 'Brasil', '90040-000');
+INSERT INTO FUNCIONARIOS VALUES (5, 'Bruna Lima', '1995-01-30', '555.666.777-88', 'Manutenção', 'Avenida J', 1000, 'Asa Norte', 'Brasília', 'DF', 'Brasil', '70040-000');
+
+#Atualizações na Tabela FUNCIONARIOS
+UPDATE FUNCIONARIOS SET FUNC_FUNCAO = 'Chefe de Manutenção' WHERE FUNC_ID = 5;
+UPDATE FUNCIONARIOS SET FUNC_CIDADE = 'Campinas' WHERE FUNC_NOME = 'Fernando Souza';
+
+#Exclusão na Tabela FUNCIONARIOS
+DELETE FROM FUNCIONARIOS WHERE FUNC_ID = 4;
+
+
+#Inserções na Tabela AERONAVES
+INSERT INTO AERONAVES (AERO_ID, AERO_MODELO, AERO_CAPACIDADE, AERO_ANO_FABRICACAO)
+VALUES (1, 'Boeing 737', 180, 2015);
+INSERT INTO AERONAVES VALUES (2, 'Airbus A320', 200, 2018);
+INSERT INTO AERONAVES VALUES (3, 'Embraer E190', 100, 2020);
+INSERT INTO AERONAVES VALUES (4, 'Boeing 747', 400, 2010);
+INSERT INTO AERONAVES VALUES (5, 'Airbus A380', 500, 2016);
+
+#Atualizações na Tabela AERONAVES
+UPDATE AERONAVES SET AERO_CAPACIDADE = 190 WHERE AERO_ID = 1;
+UPDATE AERONAVES SET AERO_ANO_FABRICACAO = 2021 WHERE AERO_MODELO = 'Embraer E190';
+
+#Exclusão na Tabela AERONAVES
+DELETE FROM AERONAVES WHERE AERO_ID = 4;
+
+
+#Inserções na Tabela VOOS
+INSERT INTO VOOS (VOO_ID, VOO_ORIGEM, VOO_DESTINO, VOO_DATA, VOO_HORA, AERO_ID)
+VALUES (1, 'São Paulo', 'Rio de Janeiro', '2024-05-01', '08:00:00', 1);
+INSERT INTO VOOS VALUES (2, 'Brasília', 'São Paulo', '2024-05-02', '09:30:00', 2);
+INSERT INTO VOOS VALUES (3, 'Rio de Janeiro', 'Curitiba', '2024-05-03', '15:00:00', 3);
+INSERT INTO VOOS VALUES (4, 'Belo Horizonte', 'Brasília', '2024-05-04', '18:45:00', 4);
+INSERT INTO VOOS VALUES (5, 'Porto Alegre', 'Recife', '2024-05-05', '23:15:00', 5);
+
+#Atualizações na Tabela VOOS
+UPDATE VOOS SET VOO_HORA = '10:00:00' WHERE VOO_ID = 1;
+UPDATE VOOS SET VOO_DESTINO = 'Salvador' WHERE VOO_ID = 3;
+
+#Exclusão na Tabela VOOS
+DELETE FROM VOOS WHERE VOO_ID = 5;
+
+
+#Inserções na Tabela RESERVAS
+INSERT INTO RESERVAS (RES_ID, PASS_CPF, VOO_ID, RES_DATA)
+VALUES (1, '123.456.789-00', 1, '2024-04-01');
+INSERT INTO RESERVAS VALUES (2, '234.567.890-11', 2, '2024-04-02');
+INSERT INTO RESERVAS VALUES (3, '345.678.901-22', 3, '2024-04-03');
+INSERT INTO RESERVAS VALUES (4, '456.789.012-33', 4, '2024-04-04');
+INSERT INTO RESERVAS VALUES (5, '123.456.789-00', 2, '2024-04-05');
+
+#Atualizações na Tabela RESERVAS
+UPDATE RESERVAS SET RES_DATA =
